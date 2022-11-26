@@ -1,5 +1,5 @@
 import SwiftUI
-import CoreData
+import MarkdownUI
 
 struct ContentView: View {
 
@@ -12,11 +12,13 @@ struct ContentView: View {
         ]
     )
 
-    @State private var contents: String = ""
+    @State private var contents: Data?
     
     var body: some View {
         VStack {
-            Text(markdown: contents)
+            if let contents = contents {
+                Markdown(try! Document(markdown: contents, options: .smart))
+            }
         }
         .onAppear {
             Task {
@@ -25,10 +27,7 @@ struct ContentView: View {
 
                 let (data, _) = try await URLSession.shared.data(for: request)
                 await MainActor.run(body: {
-                    contents = String(
-                        data: data,
-                        encoding: .utf8
-                    )!
+                    contents = data
                 })
             }
         }

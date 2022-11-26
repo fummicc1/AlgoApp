@@ -22,6 +22,7 @@
 		D39D18112931DD32003497F3 /* Text+Markdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39D18102931DD32003497F3 /* Text+Markdown.swift */; };
 		D39D18132931DFA3003497F3 /* MethodType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39D18122931DFA3003497F3 /* MethodType.swift */; };
 		D39D18152931E007003497F3 /* MethodID.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39D18142931E007003497F3 /* MethodID.swift */; };
+		D39D18182931E379003497F3 /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = D39D18172931E379003497F3 /* MarkdownUI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D39D18182931E379003497F3 /* MarkdownUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,6 +211,9 @@
 			dependencies = (
 			);
 			name = iOSApp;
+			packageProductDependencies = (
+				D39D18172931E379003497F3 /* MarkdownUI */,
+			);
 			productName = iOSApp;
 			productReference = D32E51892931C9850050742B /* iOSApp.app */;
 			productType = "com.apple.product-type.application";
@@ -281,6 +286,9 @@
 				Base,
 			);
 			mainGroup = D32E51802931C9850050742B;
+			packageReferences = (
+				D39D18162931E379003497F3 /* XCRemoteSwiftPackageReference "MarkdownUI" */,
+			);
 			productRefGroup = D32E518A2931C9850050742B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -684,6 +692,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D39D18162931E379003497F3 /* XCRemoteSwiftPackageReference "MarkdownUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/gonzalezreal/MarkdownUI";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D39D18172931E379003497F3 /* MarkdownUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D39D18162931E379003497F3 /* XCRemoteSwiftPackageReference "MarkdownUI" */;
+			productName = MarkdownUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		D32E51902931C9850050742B /* iOSApp.xcdatamodeld */ = {

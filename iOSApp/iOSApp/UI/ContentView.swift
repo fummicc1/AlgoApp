@@ -36,10 +36,6 @@ struct ContentView: View {
 }
 
 extension Method {
-    public var id: String {
-        name
-    }
-
     var markdownURL: URL? {
         guard let type = type as? MarkdownMethodType else {
             return nil
